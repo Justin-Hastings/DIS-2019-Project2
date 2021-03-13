@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Drop Down</title>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/typeahead.bundle.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>							<!--For jQuery Slider-->
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+	</head>
+	
+	<body>
+	
+		<div class="container">
+			<form>
+				<div class="row">
+					<div class="col-lg-12 section storeBurbs">
+						Suburb:<input type="text" id="suburb">
+						<select id="places">
+							<option value="Gordonvale">Gordenvale</option>
+							<option value="Bentley Park">Bentley Park</option>
+							<option value="Edmonton">Edmonton</option>
+						</select>
+						<button type="button" onclick="storeSuburb()">Store Suburb</button>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 section dropDownBurbs">
+					<button type="button" onclick="listSuburbs()">Show me the Suburbs</button><br><br>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 section storePstCdes">
+						Postcode:<input id="postcode" type="tel" maxlength="4"></input>
+						<button type="button" onclick="storePostcodes()">Store Postcode</button>
+						<button type="button" onclick="listPostcodes()">Show me the Postcodes</button><br><br>
+						
+						Number of Bedrooms:<input id="numRooms" type="number" min="0" max="38"></input>
+						<button type="button" onclick="storeRoomNums()">Store Amount of Bedrooms</button><br><br>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-6 section sliderDiv">
+						<div class="slidecontainer">
+							<input type = "range" min = "1" max = "100" value = "50" class = "slider" id = "myPriceRange"/>
+							<p>
+								Value: <span id="demo"></span>
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 section setSQL">
+						<p id="setDataTxt">
+							Set data choices
+						</p>
+						<p>
+							<label> Choose Suburb:</label>
+							<div id="burbsSQL"></div>
+						</p>
+						
+						<p>
+							<label> Choose Postcode:</label>
+							<div id="postCodesSQL"></div>
+						</p>
+						
+						<p>
+							<label> Choose Dwelling Type:</label>
+							<div id="dwellingTypeSQL"></div>
+						</p>
+						
+						<p>
+							<label> Choose number of Rooms:<label>
+							<div id="roomNumSQL"></div>
+						</p>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 section space1"></div>
+				</div>
+				
+				<div class="row">
+					<div id="priceRangeSQL">
+						<p>
+							<label for="amount">Price range:</label>
+							<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+						</p>
+						<div id="slider-range"></div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 section space2"></div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 section graphBtn">
+						<button type="button" onclick="drawChart()">Graph Dwelling Type and their Amounts</button>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 section resetBtn">
+						<input type="reset"></input>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 section returns">
+						<div id="burbs"></div>
+						<div id="pstCodes"></div>
+						<div id="chart_div"></div>
+					</div>
+				</div>
+				
+				<script src="js/functions.js"></script>
+			
+			</form>
+		</div>
+	</body>
+</html>
